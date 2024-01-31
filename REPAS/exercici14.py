@@ -4,4 +4,4 @@
 
 values = input("Introdueix 10 numeros separats per un espai: ")
 tupla = (values.split(' '))
-print(sorted(tupla))
+print(tuple(sorted(tupla)))
