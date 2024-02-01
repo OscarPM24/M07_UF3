@@ -13,24 +13,28 @@
 
 import xml.etree.ElementTree as ET
 
-students = ET.Element('students')
+def crearXML():
+    students = ET.Element('students')
 
-for i in range(1,6):
-    student = ET.SubElement(students, 'student')
-    
-    name = ET.SubElement(student, 'name')
-    surname = ET.SubElement(student, 'surname')
-    email = ET.SubElement(student, 'email')
-    dni = ET.SubElement(student, 'dni')
-    
-    name.text = f"nom {i}"
-    surname.text = f"cognom {i}"
-    email.text = f"correu {i}"
-    dni.text = f"dni {i}"
+    for i in range(1,6):
+        
+        student = ET.SubElement(students, 'student')
+        
+        name = ET.SubElement(student, 'name')
+        surname = ET.SubElement(student, 'surname')
+        email = ET.SubElement(student, 'email')
+        dni = ET.SubElement(student, 'dni')
+        
+        name.text = f"nom {i}"
+        surname.text = f"cognom {i}"
+        email.text = f"correu {i}"
+        dni.text = f"dni {i}"
 
-ET.indent(students)
+    ET.indent(students)
 
-tree = ET.ElementTree(students)
-tree.write('students.xml')
+    tree = ET.ElementTree(students)
+    tree.write('students.xml')
 
-ET.dump(students)
+    ET.dump(students)
+
+crearXML()

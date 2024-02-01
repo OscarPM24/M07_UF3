@@ -4,3 +4,27 @@
 
 import json
 
+def crearJSON():
+    books = []
+
+    for i in range(1, 5):
+        books.append(
+            {
+            "book": {
+                    "title": f"title {i}",
+                    "cover": f"cover {i}",
+                    "year": f"year {i}",
+                    "pages": f"page {i}"
+                }
+            }  
+        ) 
+                
+    with open("books.json", "w") as file:
+        json.dump(books, file, indent=2)
+    
+    with open("books.json", "r") as file:
+        result = json.load(file)
+        print(json.dumps(result, indent=2))
+    
+        
+crearJSON()
