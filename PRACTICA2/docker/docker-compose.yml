@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:13
+    container_name: bd_practica2_uf3
+    environment:  
+      - POSTGRES_DB=practica2_bd
+      - POSTGRES_PASSWORD=system
+      - POSTGRES_USER=oscar
+    ports:
+      - "5432:5432"
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 2023_oscar.perez@iticbcn.cat
+      PGADMIN_DEFAULT_PASSWORD: oscar
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+volumes:
+  local_pgdata:
+  pgadmin-data:
