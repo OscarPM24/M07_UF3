@@ -12,5 +12,5 @@ conn = psycopg2.connect(
 # Cursor para hacer la conexión a la bd
 connection = conn.cursor()
 
-# Print del cursor para ver si funciona bien
-print(connection)
+# Print de conexión exitosa y del cursor
+print(f"Conectado exitosamente! (${connection})")
