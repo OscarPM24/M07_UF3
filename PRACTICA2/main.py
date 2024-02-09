@@ -6,6 +6,7 @@ try:
     from create import *
     from read import *
     from update import *
+    from delete import *
 
     # Conexión a la BD
     connection
@@ -24,8 +25,8 @@ try:
             readPortatiles()
         elif select == 3:
             updatePortatil(1, "sistema", "Linux")
-        # elif select == 4:
-        #     # delete
+        elif select == 4:
+            deletePortatil(1)
             
 
 except (Exception, psycopg2.Error) as error:
