@@ -4,6 +4,7 @@ try:
     from connection import *
     from create_table import *
     from create import *
+    from read import *
 
     # Conexión a la BD
     connection
@@ -18,8 +19,8 @@ try:
         select = int(input('\nMenú de selección (1 Create, 2 Read, 3 Update, 4 Delete, 0 Salir) '))
         if select == 1:
             creaPortatil()
-        # elif select == 2:
-        #     # read
+        elif select == 2:
+            readPortatiles()
         # elif select == 3:
         #     # update
         # elif select == 4:

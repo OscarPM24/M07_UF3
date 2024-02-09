@@ -2,7 +2,7 @@ import connection
 
 def creaTabla():
     # Creamos la tabla portatiles
-    sql = '''CREATE TABLE PORTATILES(
+    sql = '''CREATE TABLE IF NOT EXISTS PORTATILES(
                 id SERIAL PRIMARY KEY,
                 marca VARCHAR(255) NOT NULL,
                 modelo VARCHAR(255) NOT NULL,
