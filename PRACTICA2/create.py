@@ -1,6 +1,6 @@
 import connection
 
-def creaPortatil():
+def createPortatil():
     # Creamos un portatil
     sql = '''INSERT INTO PORTATILES(marca, modelo, procesador, memoria_ram, pulgadas, sistema) VALUES (
         'Asus', 'VivoBook', 'i7-1065G7', 8, 14.5, 'Windows'

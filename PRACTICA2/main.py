@@ -5,6 +5,7 @@ try:
     from create_table import *
     from create import *
     from read import *
+    from update import *
 
     # Conexión a la BD
     connection
@@ -18,11 +19,11 @@ try:
     while select != 0:
         select = int(input('\nMenú de selección (1 Create, 2 Read, 3 Update, 4 Delete, 0 Salir) '))
         if select == 1:
-            creaPortatil()
+            createPortatil()
         elif select == 2:
             readPortatiles()
-        # elif select == 3:
-        #     # update
+        elif select == 3:
+            updatePortatil(1, "sistema", "Linux")
         # elif select == 4:
         #     # delete
             

@@ -1,8 +1,11 @@
 import connection
 
 def creaTabla():
+    # Borramos la tabla portatiles
+    sql_drop = '''DROP TABLE IF EXISTS PORTATILES'''
+    
     # Creamos la tabla portatiles
-    sql = '''CREATE TABLE IF NOT EXISTS PORTATILES(
+    sql_create = '''CREATE TABLE IF NOT EXISTS PORTATILES(
                 id SERIAL PRIMARY KEY,
                 marca VARCHAR(255) NOT NULL,
                 modelo VARCHAR(255) NOT NULL,
@@ -12,8 +15,9 @@ def creaTabla():
                 sistema VARCHAR(255) NOT NULL
     )'''
 
-    # Enviamos la query con el método execute()
-    connection.connection.execute(sql)
+    # Enviamos las querys con el método execute()
+    connection.connection.execute(sql_drop)
+    connection.connection.execute(sql_create)
 
     # Usamos el método commit() para ejecutar los cambios a la BD
     connection.conn.commit()
